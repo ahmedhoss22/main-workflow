@@ -15,13 +15,10 @@ on:
         default: "staging"
 
 jobs:
-  invoke-reusable:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Call the reusable workflow
-        uses: reusable-workflow/.github/workflows/reusable-workflow.yml@master
-        with:
-          environment: ${{ github.event.inputs.deploy_env }}
-          custom_message: "Triggered manually from ${{ github.repository }}"
-        # secrets:
-        #   api_key: ${{ secrets.DEPLOY_API_KEY }} 
+  call-reusable:  # This is now the reusable workflow itself
+    uses: ahmedhoss22/reusable-workflow/.github/workflows/reusable-workflow.yml@master
+    with:
+      environment: ${{ github.event.inputs.deploy_env }}
+      custom_message: "Triggered from ${{ github.repository }}"
+    secrets:
+      api_key: ${{ secrets.DEPLOY_API_KEY }}   # inherit
