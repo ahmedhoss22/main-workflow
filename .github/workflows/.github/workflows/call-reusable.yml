@@ -1,0 +1,25 @@
+name: Call Reusable Workflow
+
+on:
+  workflow_dispatch:  # Allow manual triggering
+    inputs:           #user enter them in the github actions UI
+      deploy_env:
+        description: "Target environment"
+        required: true
+        type: choice #string or choice is a dropdown  
+        options:
+          - staging
+          - production
+        default: "staging"
+
+jobs:
+  invoke-reusable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call the reusable workflow
+        uses: orgA/repoA/.github/workflows/reusable-workflow.yml@main
+        with:
+          environment: ${{ github.event.inputs.deploy_env }}
+          custom_message: "Triggered manually from ${{ github.repository }}"
+        secrets:
+          api_key: ${{ secrets.DEPLOY_API_KEY }} 
