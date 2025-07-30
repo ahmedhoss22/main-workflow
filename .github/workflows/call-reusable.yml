@@ -21,4 +21,5 @@ jobs:
       environment: ${{ github.event.inputs.deploy_env }}
       custom_message: "Triggered from ${{ github.repository }} by Hossam :D"
     secrets:
-      api_key: ${{ secrets.DEPLOY_API_KEY }}   # inherit
+      api_key: inherit   # inherit
+      # api_key: ${{ secrets.DEPLOY_API_KEY }}   # inherit
