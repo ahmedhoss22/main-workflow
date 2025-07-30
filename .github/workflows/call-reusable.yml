@@ -23,5 +23,5 @@ jobs:
         with:
           environment: ${{ github.event.inputs.deploy_env }}
           custom_message: "Triggered manually from ${{ github.repository }}"
-        secrets:
-          api_key: ${{ secrets.DEPLOY_API_KEY }} 
+        # secrets:
+        #   api_key: ${{ secrets.DEPLOY_API_KEY }} 
