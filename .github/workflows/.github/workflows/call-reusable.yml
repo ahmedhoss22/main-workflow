@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Call the reusable workflow
-        uses: orgA/repoA/.github/workflows/reusable-workflow.yml@main
+        uses: reusable-workflow/.github/workflows/reusable-workflow.yml@master
         with:
           environment: ${{ github.event.inputs.deploy_env }}
           custom_message: "Triggered manually from ${{ github.repository }}"
