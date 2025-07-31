@@ -18,7 +18,7 @@ jobs:
   call-reusable:
     uses: ahmedhoss22/reusable-workflow/.github/workflows/reusable-workflow.yml@master
     secrets:
-      token: ${{ secrets.REUSABLE_WORKFLOW_TOKEN }}  # ONLY this secret is needed for auth
+      PRIVATE_REPO_TOKEN: ${{ secrets.REUSABLE_WORKFLOW_TOKEN }}  # ONLY this secret is needed for auth
     with:
       environment: ${{ github.event.inputs.deploy_env }}
       custom_message: "Triggered from ${{ github.repository }} by Hossam :D"
