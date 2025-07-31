@@ -25,4 +25,6 @@ jobs:
       # api_key: ${{ secrets.DEPLOY_API_KEY }}  # Uncomment if needed
   Call-workflow2:
     uses: areeb-ado-migration/reusable-workflow/.github/workflows/reusable-workflow2.yml@master
- 
+  Call-workflow3:
+    uses: areeb-ado-migration/reusable-workflow/.github/workflows/reusable-workflow3.yml@demo
+  
