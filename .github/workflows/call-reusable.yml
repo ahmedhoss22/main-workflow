@@ -3,23 +3,23 @@ name: Call Reusable Workflow
 on:
   push:
     branches: [master]
-  workflow_dispatch:  # Allow manual triggering
-    inputs:           #user enter them in the github actions UI
+  workflow_dispatch:
+    inputs:
       deploy_env:
         description: "Target environment"
         required: true
-        type: choice #string or choice is a dropdown  
+        type: choice
         options:
           - staging
           - production
         default: "staging"
 
 jobs:
-  call-reusable:  # This is now the reusable workflow itself
+  call-reusable:
     uses: ahmedhoss22/reusable-workflow/.github/workflows/reusable-workflow.yml@master
     with:
       environment: ${{ github.event.inputs.deploy_env }}
       custom_message: "Triggered from ${{ github.repository }} by Hossam :D"
     secrets:
-      token: ${{ secrets.REUSABLE_WORKFLOW_TOKEN }} 
-      api_key: ${{ secrets.DEPLOY_API_KEY }}   # inherit
+      token: ${{ secrets.REUSABLE_WORKFLOW_TOKEN }}  # ONLY this secret is needed for auth
+      # api_key: ${{ secrets.DEPLOY_API_KEY }}  # Pass this in the reusable workflow's secrets
