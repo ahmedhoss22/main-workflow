@@ -17,8 +17,9 @@ on:
 jobs:
   call-reusable:
     uses: areeb-ado-migration/reusable-workflow/.github/workflows/reusable-workflow.yml@master
-    secrets: inherit 
     with:
       environment: ${{ github.event.inputs.deploy_env }}
       custom_message: "Triggered from ${{ github.repository }} by Hossam :D"
-      # api_key: ${{ secrets.DEPLOY_API_KEY }}  # Pass this in the reusable workflow's secrets
+    secrets: 
+      token: ${{ secrets.REUSABLE_WORKFLOW_TOKEN }}  # PAT for private repo access
+      # api_key: ${{ secrets.DEPLOY_API_KEY }}  # Uncomment if needed
