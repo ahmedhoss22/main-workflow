@@ -15,7 +15,7 @@ on:
         default: "staging"
 
 jobs:
-  call-reusable:
+  Call-first-workflow:
     uses: areeb-ado-migration/reusable-workflow/.github/workflows/reusable-workflow.yml@master
     with:
       environment: ${{ github.event.inputs.deploy_env }}
@@ -23,3 +23,6 @@ jobs:
     secrets: 
       token: ${{ secrets.REUSABLE_WORKFLOW_TOKEN }}  # PAT for private repo access
       # api_key: ${{ secrets.DEPLOY_API_KEY }}  # Uncomment if needed
+  Call-workflow2:
+    uses: areeb-ado-migration/reusable-workflow/.github/workflows/reusable-workflow2.yml@master
+ 
