@@ -16,7 +16,7 @@ on:
 
 jobs:
   call-reusable:
-    uses: ahmedhoss22/reusable-workflow/.github/workflows/reusable-workflow.yml@master
+    uses: areeb-ado-migration/reusable-workflow/.github/workflows/reusable-workflow.yml@master
     secrets:
       PRIVATE_REPO_TOKEN: ${{ secrets.REUSABLE_WORKFLOW_TOKEN }}  # ONLY this secret is needed for auth
     with:
