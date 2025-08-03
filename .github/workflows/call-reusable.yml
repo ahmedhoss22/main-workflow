@@ -26,5 +26,5 @@ jobs:
   Call-workflow2:
     uses: areeb-ado-migration/reusable-workflow/.github/workflows/reusable-workflow2.yml@master
   Call-workflow3:
-    uses: areeb-ado-migration/reusable-workflow/.github/workflows/branch-demo.yml@demo
+    uses: Areeb-demo/reusable-workflow/.github/workflows/reusable-workflow2.yml@demo
   
