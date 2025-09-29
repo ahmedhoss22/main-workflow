@@ -16,7 +16,7 @@ on:
 
 jobs:
   Call-first-workflow:
-    uses: areeb-ado-migration/reusable-workflow/.github/workflows/reusable-workflow.yml@master
+    uses: ahmedhoss22/reusable-workflow/.github/workflows/reusable-workflow.yml@master
     with:
       environment: ${{ github.event.inputs.deploy_env }}
       custom_message: "Triggered from ${{ github.repository }} by Hossam :D"
